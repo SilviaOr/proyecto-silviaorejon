@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reserva tu mesa en Bandido Burgers en cualquiera de nuestros locales.">
+
+         <!-- Añado un title para mejorar la accesibilidad y optimizar el SEO -->
+
+    <title>Bandidio- reserva - local</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Varta:wght@300..700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+    <!-- Añado un Header con los elementos principales de la web y el logotipo de la marca -->
+    <header class="Header">
+
+        <!-- Utilizo H1 para el logotipo-->
+       <h1 class="H1">
+           <a href="inicio.html">
+               <picture>
+                   <source srcset="assets/BANDIDO.png" type="image/png">
+                   <img src="assets/BANDIDO.png" alt="logo-bandido" width="1080" height="1080">
+               </picture>
+           </a>
+       </h1>
+       <nav class="Header-nav">
+            <ul class="Ul-header">
+                <li class="Li-header"><a href="carta.html" title="Ver carta de hamburguesas">Carta</a></li>
+                <li class="Li-header"><a href="expediente.html" title="Ver nuestro expediente">Expediente</a></li>
+                <li class="Li-header"><a href="confidencial.html" title="Ver apartado confidencial">Confidencial</a></li>
+                <li class="Li-header"><a href="servicios.html" title="Ver nuestros servicios">Servicios</a></li>
+            </ul>
+         </nav>
+          <!-- Utilizo button para optimizar el espacio en Responsive-->
+          <button class="Header-menu" aria-label="icono.menu" title="Abrir menú de navegación">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+              </svg>
+        </button>
+   </header>
+    <section class="Principal-local">
+
+        <!-- Utilizo H2 para resaltar el titulo del apartado-->
+        <h2 class="H2-servicios">Abuela, tus guisos son leyenda… pero esto es otro delito 🍔🔥</h2>
+         <!-- Form para recopilar los datos para realizar la reserva online en el local-->
+
+        <form action="Formulario-local" class="Formulario-local" method="post" >
+            <div class="Local">
+                <!-- Utilizo select para mostrar las opciones de ubicaion-->
+
+                <label for="direccion">Dirección del local</label>
+                <select id="direccion" name="direccion" required>
+                    <option value="" disabled selected>Ciudad</option>
+                    <option value="">Alcalá de Henares</option>
+                    <option value="">San Sebastián</option>
+                    <option value="">Alicante</option>
+                    <option value="">Sevilla</option>
+                </select> 
+            </div>
+             <div class="Local">
+                <!-- Utilizo type date para agregar un calendario y time para la hora-->
+
+                <label for="Fecha">Seleccione el día</label>
+                <input type="date" name="Fecha" id="Fecha">
+            </div>
+            <div class="Local">
+                <label for="Hora">Seleccione la hora</label>
+                <input type="time" name="Hora" id="Hora">
+            </div> 
+            <div class="Local">
+                <label for="Personas">Número de personas</label>
+                <select id="Personas" name="Personas" required>
+                    <option value="" disabled selected>2 personas</option>
+                    <option value="">2 personas</option>
+                    <option value="">3 personas</option>
+                    <option value="">4 personas</option>
+                    <option value="">5 personas</option>
+                    <option value="">6 personas</option>
+                </select> 
+            </div>
+        </form>
+        <div class="Local">
+            <!-- Utilizo button para enviar la informacion a la base de datos-->
+
+            <button type="submit" class="Button-servicios" title="Enviar reserva">Enviar</button>
+        </div>
+    </section>
+        <!-- En el footer fijo los links a redes sociales y los documentos legales para un acceso rápido -->
+
+        <footer class="Footer">
+            <div class="Footer-legal">
+                <ul class="Ul-Legal">
+                    <li class="Li-legal"><a href="legal.html" title="Aviso Legal">Aviso Legal</a></li>
+                    <li class="Li-legal"><a href="privacidad.html" title="Política de Privacidad">Política de Privacidad</a></li>
+                    <li class="Li-legal"><a href="cookies.html" title="Política de Cookies">Política de Cookies</a></li>
+                </ul>
+            </div>
+            <div class="Footer-social">
+                <ul class="Ul-social">
+                    <li class="Li-social"><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer nofollow" title="Instagram de Bandido">Instagram</a></li>
+                    <li class="Li-social"><a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer nofollow" title="Tiktok de Bandido">Tiktok</a></li>
+                    <li class="Li-social"><a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer nofollow" title="Youtube de Bandido">Youtube</a></li>
+                    <li class="Li-social"><a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer nofollow" title="Linkedin de Bandido">Linkedin</a></li>
+                </ul>
+            </div>
+        </footer>
+</body>
+</html>

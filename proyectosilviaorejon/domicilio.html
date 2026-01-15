@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Añado un title para mejorar la accesibilidad y optimizar el SEO -->
+
+    <title>Bandido-reserva-local</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js" defer></script>
+    <!-- Añado un title para mejorar la accesibilidad y optimizar el SEO -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Varta:wght@300..700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <!-- Añado un Header con los elementos principales de la web y el logotipo de la marca -->
+    <header class="Header">
+        <!-- Utilizo H1 para el logotipo-->
+       <h1 class="H1">
+           <a href="inicio.html">
+               <picture>
+                   <source srcset="assets/BANDIDO.png" type="image/png">
+                   <img src="assets/BANDIDO.png" alt="logo-bandido" width="1080" height="1080">
+               </picture>
+           </a>
+       </h1>
+       <nav class="Header-nav">
+            <ul class="Ul-header">
+                <li class="Li-header"><a href="carta.html" title="Ver carta de hamburguesas">Carta</a></li>
+                <li class="Li-header"><a href="expediente.html" title="Ver nuestro expediente">Expediente</a></li>
+                <li class="Li-header"><a href="confidencial.html" title="Ver apartado confidencial">Confidencial</a></li>
+                <li class="Li-header"><a href="servicios.html" title="Ver nuestros servicios">Servicios</a></li>
+            </ul>
+        </nav>
+         <!-- Utilizo button para optimizar el espacio en Responsive-->
+         <button class="Header-menu" aria-label="icono.menu" title="Abrir menú de navegación">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+              </svg>
+        </button>
+   </header>
+
+    <div class="Principal-domicilio">
+        <!-- Utilizo H2 para dar importancia a los titulos destacados de cada section -->
+
+        <h2 class="H2-servicios">SIN SPOILERS, PERO EN EL SOFÁ TODO SABE MEJOR 📺🍔</h2>
+        <!-- Añado Form para recopilar los datos del usuario para hacer sus pedido a domicilio -->
+
+        <form action="Formulario-local" class="Formulario-local">
+            <div class="Domicilio">
+                <label for="direccion">Dirección del local</label>
+            <!-- Select para agregar diferentes opciones -->
+
+                <select id="direccion" name="direccion" required>
+                    <!-- Disabled selected para que Ciudad aparezca en texto gris -->
+                    <option value="" disabled selected>Ciudad</option>
+                    <option value="">Alcalá de Henares</option>
+                    <option value="">San Sebastián</option>
+                    <option value="">Alicante</option>
+                    <option value="">Sevilla</option>
+                </select> 
+            </div>
+             <div class="Domicilio">
+                <label for="Nombre">Nombre completo</label>
+                <input type="text" name="Nombre" id="Nombre">
+            </div>
+            <div class="Domicilio">
+
+                <label for="Telefono">Número de teléfono</label>
+                <input type="tel" name="Telefono" id="Telefono" placeholder="+34666777799">
+            </div>
+            <div class="Domicilio">
+            <!-- Para el Form de hora utilizo <select> con opciones predeterminadas-->
+                <label for="Hora">Seleccione hora de entrega</label>
+                <select id="Hora" name="Hora" required>
+                    <option value="" disabled selected> Lo antes posible</option>
+                    <option value="">21:00-21:30</option>
+                    <option value="">21:30-22:00</option>
+                    <option value="">22:00-22:30</option>
+                    <option value="">Lo antes posible</option>
+    
+                </select> 
+            </div> 
+            <div class="Domicilio">
+                <label for="Pago">¿Cómo desea pagar?</label>
+                <select id="Pago" name="Pago" required>
+                    <option value="" disabled selected>Apple Pay</option>
+                    <option value="">Tarjeta de crédito</option>
+                    <option value="">PayPal</option>
+                    <option value="">Efectivo</option>
+                    <option value="">Apple Pay</option>
+                </select> 
+            </div>
+            <!-- Etiqueta button para enviar los datos recopilados a la base de datos -->
+            <div class="Local">
+                <div class="Button-servicios">Enviar</div>
+            </div>
+        </form>
+    </div>
+    <!-- En el footer fijo los links a redes sociales y los documentos legales para un acceso rápido -->
+
+    <footer class="Footer">
+        <div class="Footer-legal">
+            <ul class="Ul-Legal">
+                <li class="Li-legal"><a href="legal.html" title="Aviso Legal">Aviso Legal</a></li>
+                <li class="Li-legal"><a href="privacidad.html" title="Política de Privacidad">Política de Privacidad</a></li>
+                <li class="Li-legal"><a href="cookies.html" title="Política de Cookies">Política de Cookies</a></li>
+            </ul>
+        </div>
+        <div class="Footer-social">
+            <ul class="Ul-social">
+                <li class="Li-social"><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer nofollow" title="Instagram de Bandido">Instagram</a></li>
+                <li class="Li-social"><a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer nofollow" title="Tiktok de Bandido">Tiktok</a></li>
+                <li class="Li-social"><a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer nofollow" title="Youtube de Bandido">Youtube</a></li>
+                <li class="Li-social"><a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer nofollow" title="Linkedin de Bandido">Linkedin</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
+

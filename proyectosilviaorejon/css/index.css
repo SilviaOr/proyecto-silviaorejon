@@ -1,0 +1,1595 @@
+:root {
+    --main-bg: #a20f0f;
+    --main-color: whitesmoke;
+    --font-family: 'Bebas Neue', sans-serif;
+    --transition-default: 0.3s ease;
+  }
+*{
+    margin:0;
+    padding:0;
+    border: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+a{
+    display: block;
+    color:inherit;
+    text-decoration: none;
+}
+p a{
+    display: inline;
+}
+h1 , h2 , h3 , h4 , h5 , h6 , strong , em , mark{
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: inherit;
+}
+
+picture , img, video {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: initial;
+}
+svg{
+    display: block;
+    width: initial;
+    height: initial;
+    fill: currentColor;
+}
+
+html, body{
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+/*Al encabezado le agrego el color corporatuvo, ancho completo y distribución flex y espaciado*/ 
+.Header{
+    background-color: #a20f0f;
+    width: 100%;
+    padding: 0rem 2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+    letter-spacing: 0.1rem;
+    color: whitesmoke;
+    position: relative;
+    z-index: 10;
+}
+/* Agrego display flex y row nowrap para adaptar la distribución en la misma fila*/ 
+
+.Ul-header{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 2rem;
+    justify-content: end;
+    align-items: center;
+}
+/* Agrego display none para que aparezca solo en Resposive*/ 
+.Header-menu {
+    background-color: #a20f0f;
+    color: whitesmoke;
+    font-family: 'Bebas Neue', sans-serif;
+    display: none;
+    font-size: 2rem;
+    transition: transform 0.3s ease; 
+    
+}
+
+.Header-menu:hover {
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+.H1{
+    width: 6%;
+    animation: fadeIn 0.5s ease-in;
+}
+/* Adapto todos los elementos del header para dispositivo movil*/ 
+
+@media (max-width:1030px){
+    /* Adapto el tamaño del logo según el dispositivo*/ 
+
+    .Header-menu {
+        display: block;
+        min-height: 10vh;
+        z-index: 2; /* Asegura que esté encima del ul si se solapan */
+        order: 1;
+        margin-left: 0;
+
+     }  
+
+     .H1{
+        order: 2;
+        margin-left: auto;
+        margin-right: 0;
+        width: 15%;
+     }
+      /* Cuando esté visible (desplegado) */
+      .Ul-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 80%;
+        height: 100vh;
+
+        background-color: #a20f0f;
+
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        padding: 3rem;
+        font-size: 32px;
+
+        opacity: 0;
+        pointer-events: none;
+
+        transform: translateX(-100%);
+        transition: transform 0.4s ease;
+
+        z-index: 1000;
+      }
+    
+      .Ul-header.isVisible {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: all;
+        
+      }
+    
+    
+    .no-scroll{
+        overflow: hidden;
+        height: 100vh;
+      }
+    
+}
+
+@media (max-width: 480px) {
+
+    
+    .Header-menu {
+        display: block;
+        z-index: 2; /* Asegura que esté encima del ul si se solapan */
+        order: 1;
+     }  
+
+     .H1{
+        order: 2;
+     }
+      /* Cuando esté visible (desplegado) */
+      .Ul-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 70%;
+        height: 100vh;
+        font-size: 22px;
+
+        background-color: #a20f0f;
+
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        padding: 2rem;
+        gap: 0.5rem;
+
+        opacity: 0;
+        pointer-events: none;
+
+        transform: translateX(-100%);
+        transition: transform 0.4s ease;
+
+        z-index: 1000;
+      }
+    
+      .Ul-header.isVisible {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: all;
+        
+      }
+    }
+
+/* Agrego estilos de tamaño y color a las diferentes etiquetas*/ 
+
+.Video{
+    width: 100%;
+    min-height: 80vh;
+    background-color: whitesmoke;
+}
+
+.Inicio-menu{
+    background-color: #111111;
+    width: 100%;
+    padding: 2rem;
+}
+
+/* Agrego display grid para crear una distribución en tabla*/ 
+
+.Ul-inicio{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin: auto;
+
+    gap: 2rem;
+    justify-items: center;
+    align-items: center;
+
+    padding: 2rem;
+}
+
+.Li-inicio{
+    width: 100%;
+    min-height: 40vh;
+    
+    border-radius: 1rem;
+    padding: 2rem;
+    transform: scale(1.06);
+    
+}
+
+/* El elemento principal tendrá un tamaño mayor para resaltar su relevancia*/ 
+
+
+.Li-inicio--destacado{
+    
+    border-radius: 1rem;
+    padding: 2rem;
+    min-height: 40vh;
+    width: 100%;
+
+    transform: scale(1.2);
+    
+}
+
+/* Estilos para los elementos H para mantener la homogeneidad visual según los colores de la marca */
+
+.H2-inicio{
+    background-color: #a20f0f;
+    width: 60%;
+    padding: 2rem;
+    margin: auto;
+    
+    color: white;
+    font-size: 32px;
+    letter-spacing: 0.1rem;
+    text-align: center;
+
+}
+
+@media (max-width:1030px){
+    /* Adapto el tamaño de las secciones según el dispositivo*/ 
+
+   
+    .H2-inicio{
+        width: 100%;
+        font-size: 28px;
+    }
+
+    .Li-inicio, .Li-inicio--destacado{
+        min-height: 20vh;
+
+    }
+    .Ul-inicio{
+        width: 100%;
+        min-height: 20vh;
+        grid-template-columns: repeat(3, 1fr);
+        transition: opacity 0.3s ease;
+    }
+    .Li-hamburguesas{
+        width: 100%;
+
+    }
+}
+
+@media (max-width: 480px) {
+    
+    .H2-inicio{
+        width: 100%;
+        min-height: 5vh;
+        font-size: 20px;
+    }
+    .Ul-inicio{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        transition: opacity 0.3s ease;
+    }
+ 
+}
+
+.Inicio-resenas{
+    width: 100%;
+    min-height: 50vh;
+    background-color: whitesmoke;
+    padding: 2rem;
+}
+
+
+.H4-resenas{
+    color: #a20f0f;
+    font-weight: 800;
+    padding-bottom: 0.5rem ;
+}
+
+.Ul-resenas{
+    width: 80%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    margin: auto;
+
+    gap: 2rem;
+    font-family: sans-serif;
+}
+
+.Li-resenas{
+    background-color: white;
+    width: 100%;
+    min-height: 20vh;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+
+}
+
+/* Añado una transicion hover para modificar al tamaño al pasar el cursor por encima */
+
+.Li-resenas:hover{
+    transform: scale(1.1);
+
+}
+
+
+@media (max-width:1030px){
+    /* Adapto el tamaño de las secciones según el dispositivo*/ 
+    .Inicio-resenas{
+        min-height: 20vh;
+    }
+    
+    .Ul-resenas{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        font-size: 16px;
+    }
+
+    .Li-resenas{
+        min-height: 5vh;
+        width: 100%;
+    }
+}
+
+/* Cambio la dirección de los items para adaptar a versión móvil */
+
+@media (max-width: 480px) {
+    
+    .Inicio-resenas{
+        width: 100%;
+    }
+    .Ul-resenas{
+        width: 100%;
+        min-height: 5vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        font-size: 14px;
+        padding: 0;
+        margin-top: 1.5rem;
+    }
+    
+    .H4-resenas{
+        font-size: 12px;
+    }
+    .Li-resenas{
+        min-height: 5vh;
+        width: 100%;
+    }
+   
+}
+
+.Inicio-confidencial{
+    width: 100%;
+    min-height: 40vh;
+    background-color: rgb(28, 28, 28);
+    padding: 2rem;
+}
+
+/* Agrego column nowrap para mantener la distribución en una única columna */
+
+.Inicio-fyq{
+    width: 80%;
+    display: flex;
+    flex-flow: column nowrap;
+    margin: auto;
+    padding: 2rem;
+    gap: 2rem;
+    
+    color: #1e1d1d;
+    font-family: sans-serif;
+}
+.Inicio-fyq--item{
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    transition: transform 1.2s ease;
+}
+
+.H3-fyq{
+    width: 100%;
+    font-weight: 700;
+}
+
+.P-fyq{
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.8s ease;
+    margin-top: 1rem;
+}
+
+
+.Inicio-fyq--item:hover .P-fyq{
+    max-height: 200px;
+    opacity: 1;
+}
+
+@media (max-width:1030px){
+    /* Adapto el tamaño de las secciones según el dispositivo*/ 
+    .Inicio-fyq{
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .P-fyq{
+        font-size: 16px;
+        max-height: none;   /* quito la animación en responsive para facilitar la lectura */
+        opacity: 1;
+        transition: none;  
+    }
+}
+@media (max-width: 480px) {
+    
+    .Inicio-fyq{
+        width: 100%;
+        font-size: 16px;
+        padding: 0;
+        margin-top: 1.5rem;
+    }
+    .Inicio-fyq--item{
+        padding: 1rem;
+    }
+    .H3-fyq{
+        font-size: 14px;
+
+    }
+
+    .P-fyq{
+        font-size: 14px;
+    }
+    
+}
+
+.Section-carta{
+    padding: 2rem;
+    background-color: #111111;
+}
+.H2-carta{
+    background-color: #a20f0f;
+    width: 80%;
+    padding: 2rem;
+    margin: auto;
+    
+    
+    color: white;
+    font-size: 30px;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    
+}
+.Ul-carta{
+    width: 100%;
+    min-height: 80vh;
+    padding: 4rem;
+    gap: 2rem;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
+}
+/*  Uso de position para que la etiqueta <p> se superponga al hacer clic */
+
+
+.Li-hamburguesas{
+    width: 35vh;
+    min-height: 25vh;
+
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+    position: relative;
+    
+}
+
+.P-carta{
+    display: none;
+    width: 35vh;
+    min-height: 50vh;
+    background-color: #111111;
+    font-family: 'Courier New', Courier, monospace;
+    color: whitesmoke;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+
+    justify-content: center;
+    align-items: center;
+}
+
+/*  La etiqueta .P-carta solo aparecerá al hacer click y .Li-hamburguesa desaparece */
+
+
+.P-carta.isActive{
+    display: block;
+    opacity: 1;
+  
+}
+
+/*  Adapto con grid column la distribución de las columnas según el dispositivo */
+
+
+@media (max-width:1030px){
+
+    .H2-carta{
+        font-size: 32px;
+    }
+    
+    .Ul-carta{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 2rem;
+    }
+    
+    .Li-hamburguesas{
+        width: 100%;
+
+    }
+    .P-carta{
+        width: 100%;
+        font-size: 22px;
+    }
+}
+
+@media (max-width:780px){
+
+    .H2-carta{
+        font-size: 24px;
+    }
+    
+    .Li-hamburguesas{
+        width: 100%;
+
+    }
+    .P-carta{
+        width: 100%;
+        font-size: 18px;
+    }
+   
+    .Ul-carta{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    
+}
+
+@media (max-width:480px){
+
+    .H2-carta{
+        font-size: 18px;
+    }
+    
+    .Li-hamburguesas{
+        width: 100%;
+
+    }
+    .P-carta{
+        width: 100%;
+        font-size: 16px;
+    }
+   
+    .Ul-carta{
+        display: grid;
+        grid-template-columns: 1fr;
+        
+    }
+    
+}
+
+/*  Background-image para fijar una imagen en el fondo, añadiendo position y display flex*/
+
+.Expediente{
+    background-image: url(assets-copia/expediente-fondo.jpg);
+    width: 100%;
+    min-height: 40vh;
+    background-color: whitesmoke;
+    padding: 3rem;
+    gap: 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.H2-expediente{
+    background-color: #a20f0f;
+    width: 60%;
+    padding: 2rem;
+    color: white;
+    font-size: 30px;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+
+}
+
+.P-expediente{
+    width: 80%;
+    color: white;
+    padding: 1rem;
+    font-size: 30px;
+    letter-spacing: 0.1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    text-align: start;
+}
+
+@media (max-width:1030px){
+
+    .Expediente{
+        width: 100%;
+    }
+
+    .H2-expediente{
+        font-size: 32px;
+    } 
+
+    .P-expediente{
+        width: 100%;
+        font-size: 28px;
+        text-align: start;
+    }
+   
+}
+
+@media (max-width:780px){
+    .Expediente{
+        width: 100%;
+    }
+
+    .H2-expediente{
+        font-size: 20px;
+    }
+    .P-expediente{
+        width: 100%;
+        font-size: 18px;
+        padding: 0rem;
+        text-align: start;
+       
+    }
+}
+
+@media (max-width:480px){
+/*  Elimino Background-image para facilitar la lectura */
+
+    .Expediente{
+        width: 100%;
+    }
+
+    .H2-expediente{
+        width: 100%;
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+
+    .P-expediente{
+        width: 100%;
+        font-size: 16px;
+        text-align: start;
+       
+    }
+    
+}
+.Familia-expediente{
+    width: 100%;
+    min-height: 40vh;
+    background-color: #111111;
+    padding: 4rem;
+    margin: auto;
+}
+
+.Frase-familia{
+    width: 100%;
+    font-family: "Rock Salt", cursive;
+    font-weight: 400;
+    font-size: 40px;
+    color: #a20f0f; 
+    text-align: center;
+    padding: 2rem;
+      
+}
+.Ul-familia{
+    width: 100%;
+    min-height: 30vh;
+    padding: 0rem 1rem;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.Li-familia{
+
+    min-height: 30vh;
+    gap: 1rem;
+}
+
+@media (max-width:1030px){
+
+    .Familia-expediente{
+        width: 100%;
+        min-height: 20vh;
+    
+    }
+    .Ul-familia{
+        width: 100%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .Frase-familia{
+        width: 80%;
+        font-size: 32px;
+        margin: auto;
+       
+    }
+    
+}
+
+@media (max-width:780px){
+
+    .Familia-expediente{
+        width: 100%;
+    
+    }
+    .Ul-familia{
+        width: 100%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .Frase-familia{
+        margin: auto;
+        width: 80%;
+        font-size: 22px;
+    }
+}
+@media (max-width:480px){
+
+    .Familia-expediente{
+        width: 100%;    
+    }
+    
+    .Ul-familia{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .Frase-familia{
+        width: 100%;
+        justify-content: center;
+        font-size: 18px;
+    }
+    
+}
+
+.Eventos-expediente{
+    width: 100%;
+    background-color: whitesmoke;
+    padding: 2rem;
+
+}
+
+/*  Agrego display para adaptar la distribución del contenido */
+
+.Eventos-burger{
+    padding: 3rem;
+    gap: 1rem; 
+    margin: auto;
+    justify-content: center;
+
+    display: flex;
+    flex-flow: row nowrap;
+}
+.Eventos{
+    width: 100%;
+    gap: 1rem;
+
+   display: grid;
+   justify-content: center;
+ 
+}
+
+@media (max-width:780px){
+
+    .Eventos{
+        width: 100%;
+    
+    }
+    .Eventos-burger{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+}
+
+@media (max-width:410px){
+
+    .Eventos{
+        width: 100%;
+    
+    }
+    .Eventos-burger{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 0rem;
+        gap: 1rem;
+    }
+
+}
+
+.Feedback-expediente{
+    width: 100%;
+    min-height: 50vh;
+    background-color: #111111;
+    padding: 3rem;
+    margin: auto;
+    gap: 2rem;
+}
+
+/*  Agrego estilos para el Formulario y display flex column para mantener el contenido en una columna */
+
+.Formulario-expediente{
+    width: 80%;
+    min-height: 30vh;
+    background-color: whitesmoke;
+    margin: auto;
+    line-height: 2.6rem;
+    font-family: sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #a20f0f;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.Contacto{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 2rem 0rem;
+}
+
+/*  Con input modifico los estilos de los elementos del Form */
+
+.Contacto input{
+    width: 100%;
+    border-bottom: 0.2rem solid #a20f0f;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    padding: 0.5rem;
+
+    background-color: transparent;
+    
+}
+.Terminos-contacto{
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 1.6rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.H3-expediente{
+    background-color: #a20f0f;
+    width: 60%;
+    padding: 2rem;
+    margin: auto;
+    margin-bottom: 2rem;
+    
+    color: white;
+    font-size: 30px;
+    letter-spacing: 0.1rem;
+    text-align: center;
+}
+@media (max-width:1030px){
+
+    .Formulario-expediente{
+        width: 100%;
+    }
+    .Terminos-contacto{
+        font-size: 16px;
+    }
+    .Contacto{
+        font-size: 24px;
+    }
+    
+}
+@media (max-width:780px){
+    .Formulario-expediente{
+        width: 100%;
+    }
+    .Terminos-contacto{
+        font-size: 16px;
+    }
+    .Contacto{
+        font-size: 24px;
+    }
+    .H3-expediente{
+        font-size: 24px;
+    }
+    
+    
+}
+@media (max-width:480px){
+
+    .Formulario-expediente{
+        width: 100%;
+        padding-top: 0rem;
+    }
+    .Terminos-contacto{
+        font-size: 10px;
+       
+    }
+    .Contacto{
+        font-size: 16px;
+    }
+    .Contacto input{
+        font-size: 12px;
+    }
+    .H3-expediente{
+        width: 100%;
+        font-size: 20px;
+    }
+    
+}
+
+/*  Modifico los estilos del button para crear animación al hacer click */
+
+.Button{
+    width: 20%;
+    border: 0.1rem solid #a20f0f;
+    color: #a20f0f;
+    padding: 0.8rem;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.Button:hover{
+    background-color: #a20f0f;
+    color: white;
+}
+@media (max-width:480px){
+
+    .Button{
+        width: 100%;
+
+    }
+    
+}
+
+/*  Background image para fijar imagen en el fondo de la pantalla con position */
+
+.Principal-confidencial{
+    width: 100%;
+    min-height: 60vh;
+    background-color: whitesmoke;
+    padding: 3rem;
+    background-image: url(assets-copia/iconografia-confidencial.png);
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*  Los elementos tienen position para colocar por encima de la imagen*/
+
+
+.H2-confidencial{
+    background-color: #a20f0f;
+    width: 60%;
+    padding: 2rem;
+    margin: auto;
+    
+    color: white;
+    font-size: 30px;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    position: absolute;
+    top: 10%;
+    justify-content: center;
+}
+
+.P-confidencial{
+    width: 65%;
+    margin: auto;
+    padding: 2rem;
+    color: white;
+
+    font-size: 26px;
+    letter-spacing: 0.1rem;
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+    top: 25%;
+    justify-content: center;
+    align-items: center;
+}
+
+.Password-confidencial{
+    width: 60%;
+    position: absolute;
+    top: 60%;
+    justify-content: center;
+    align-items: center;
+}
+
+.Password-confidencial input {
+    width: 100%;
+    min-height: 10vh;
+    position: relative;
+    margin-bottom: 2rem;
+    font-size: 18px;
+
+    text-align: center;
+    justify-content: center;
+}
+
+.Button-confidencial{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 20%;
+    border: 0.1rem solid #000000;
+    padding: 0.8rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+
+}
+@media (max-width:1030px){
+    .Principal-confidencial{
+        width: 100%;
+        min-height: 80vh;
+
+    }
+    .P-confidencial{
+        width: 70%;
+        justify-content: center;
+        text-align: start;
+        font-size: 24px;
+    }
+    .Password-confidencial input{
+        width: 100%;
+        justify-content: center;
+        margin: 1rem;
+        font-size: 20px;
+        
+    }
+
+    .Button-confidencial{
+        margin-top: 1rem;
+        font-size: 16px;
+    }
+      
+} 
+@media (max-width:780px){
+    .Principal-confidencial{
+        width: 100%;
+       
+
+    }
+    .P-confidencial{
+        width: 100%;
+        font-size: 18px;
+    }
+    .Password-confidencial input{
+        width: 100%;
+        font-size: 16px;
+     
+        
+    }
+      
+} 
+@media (max-width:480px){
+    .Principal-confidencial{
+        width: 100%;
+        min-height: 80vh;
+
+    }
+
+    .H2-confidencial{
+        width: 70%;
+        font-size: 20px;
+    }
+    .P-confidencial{
+        width: 90%;
+        font-size: 14px;
+        
+    }
+
+    .Password-confidencial{
+        width: 75%;
+        margin: 2rem;
+        justify-content: center;
+    }
+    .Password-confidencial input{
+        justify-content: center;
+        font-size: 14px;
+        
+    }
+
+    .Button-confidencial{
+        width: 50%;
+    }
+} 
+
+.Exclusividad-descuentos{
+    width: 100%;
+    background-color: black;
+}
+
+/*  Uso de display grid para crear una distribución de elementos en tabla*/
+
+.Ul-exclusividad{
+    width: 100%;
+    padding: 4rem 1rem;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+}
+
+.Li-exclusividad{
+    width: 60vh;
+    
+}
+
+@media (max-width:1030px){
+    
+    .Ul-exclusividad{
+        width: 100%;
+        min-height: 40vh;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 2rem;
+    }
+    
+    .Li-exclusividad{
+        width: 100%;
+
+    }
+      
+} 
+   
+
+@media (max-width:480px){
+    .Ul-exclusividad{
+        width: 80%;
+        grid-template-columns: 1fr;
+    }
+    
+    
+} 
+.Principal-servicios{
+    width: 100%;
+    min-height: 10vh;
+    background-color: whitesmoke;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.H2-servicios{
+    background-color: #a20f0f;
+    width: 60%;
+    padding: 2rem;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    
+    color: white;
+    font-size: 30px;
+    letter-spacing: 0.1rem;
+    text-align: center;
+   
+}
+
+.H3-servicios{
+    border: 0.1rem solid #a20f0f;
+    width: 90%;
+    padding: 2rem;
+    margin: auto;
+    
+    
+    color: #a20f0f;
+    font-size: 24px;
+    letter-spacing: 0.1rem;
+    text-align: center;
+   
+}
+
+/*  Uso de display grid para crear una distribución de elementos en tabla*/
+
+.Opcion-servicios{
+    background-color: whitesmoke;
+    width: 120vh;
+    min-height: 50vh;
+    padding: 2rem;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+   
+}
+
+.Button-servicios{
+    width: 60%;
+    border: 0.1rem solid #a20f0f;
+    color: #a20f0f;
+    padding: 0.8rem;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+/*  Modifico los estilos del button para crear animación al hacer click */
+
+.Button-servicios:hover{
+    background-color: #a20f0f;
+    color: white;
+}
+
+@media (max-width:1030px){
+    .Principal-servicios{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .Opcion-servicios{
+        width: 100%;
+    }
+      
+} 
+
+@media (max-width:480px){
+    .Principal-servicios{
+        width: 100%;
+        padding: 1rem;
+        
+    }
+    .Opcion-servicios{
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        gap: 1rem;
+        
+    }
+    .H3-servicios{
+        font-size: 20px;
+        width: 100%;
+    }
+    .H2-servicios{
+        width: 80%;
+        font-size: 22px;
+        margin-bottom: 0;
+    }
+      
+} 
+
+
+.Principal-local, .Principal-domicilio{
+    width: 100%;
+    min-height: 40vh;
+    background-color: #111111;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2rem;
+
+}
+
+/*  Agrego dos elementos para adoptar los mismos estilos a ambos apartados */
+
+.Local, .Domicilio{
+    width: 50%;
+    min-height: 10vh;
+    background-color: whitesmoke;
+    margin: auto;
+
+    line-height: 2.6rem;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #a20f0f;
+    padding: 2rem;
+
+
+    justify-content: center;
+    text-align: center;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+   
+
+}
+/*  Input y select para modificar los estilos del Form */
+
+.Local input, select, .Domicilio input, select{
+    width: 80%;
+    border-radius: 0.6rem;
+    border: 0.1rem solid #a20f0f;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    padding: 0.5rem;
+
+    background-color: transparent;
+}
+.Local input:hover, .Domicilio input:hover {
+    transition: border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1) 100ms;
+    border-color: #750000;
+  }
+
+/*  Crear estilos iguales para mantener homegeneidad en los apartados legales */
+@media (max-width:1030px){
+    
+    .Local, .Domicilio{
+        width: 80%;
+        min-height: 13vh;
+        font-size: 26px;
+        
+    }
+
+    .Local input, select, .Domicilio input, select{
+
+        font-size: 22px;
+    }
+      
+} 
+@media (max-width:780px){
+    .Local, .Domicilio{
+        width: 100%;
+        font-size: 22px;
+        
+    }
+
+    .Local input, select, .Domicilio input, select{
+
+        font-size: 22px;
+    }
+      
+} 
+@media (max-width:480px){
+    .Local, .Domicilio{
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .Local input, select, .Domicilio input, select{
+        font-size: 12px;
+        width: 100%;
+    }
+
+    .H2-servicios{
+        width: 90%;
+        font-size: 18px;
+        margin-bottom: 1rem;
+        margin-top: 0;
+    }
+          
+} 
+
+.Politica-privacidad{
+    background-color: white;
+    width: 80%;
+    padding: 4rem;
+    text-align: justify;
+    
+}
+
+.H2-politica{
+    font-weight: 900;
+    font-size: 60px;
+    margin-bottom: 2rem;
+
+}
+.H3-politica{
+    font-size: 24px;
+    font-weight: 700;
+    font-family: sans-serif;
+    margin-bottom: 2rem;
+}
+
+.P-politica{
+    font-size: 22px;
+    font-family: sans-serif;
+    margin-bottom: 2rem;
+}
+
+/*  Uso de display para adaptar la distribución en linea y justify space between para mantener los elementos en el ancho */
+@media (max-width:1030px){
+    
+    .Politica-privacidad {
+        width: 100%;
+        min-height: 84vh;
+    }
+      
+} 
+@media (max-width:780px){
+    .Politica-privacidad {
+        width: 100%;
+        min-height: 84vh;
+    }
+    .P-politica{
+        font-size: 16px;
+    }
+    .H2-politica{
+        font-size: 40px;
+    }
+    .H3-politica{
+        font-size: 24px;
+    }
+      
+} 
+@media (max-width:410px){
+    .Politica-privacidad {
+        width: 100%;
+        min-height: 40vh;
+    }
+    .P-politica{
+        font-size: 12px;
+    }
+    .H2-politica{
+        font-size: 30px;
+    }
+    .H3-politica{
+        font-size: 18px;
+    }
+} 
+
+.Footer{
+    background-color: #a20f0f;
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    gap: 0.5rem;
+
+
+    font-size: 15px;
+    font-weight: 100;
+    letter-spacing: 0.1rem;
+    color: whitesmoke;
+}
+
+.Ul-legal{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 2rem;
+}
+
+.Ul-social{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 2rem;
+}
+
+
+/*  Adapto la distribución con Responsive*/
+
+
+@media (max-width: 780px) {
+
+    .Footer{
+        justify-content: space-between;
+    }
+
+    .Ul-legal{
+        display: flex;
+        flex-direction: column;
+        font-size: 0.9rem;
+        
+    }
+    
+    .Ul-social{
+        display: flex;
+        flex-direction: column;
+        font-size: 0.9rem;
+        gap: 0rem;
+    }
+    
+}
+
+@media (max-width: 480px){
+    .Footer{
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        font-weight: 20;
+    }
+
+    .Ul-legal{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 0.9rem;
+        
+    }
+
+    .Ul-social{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: right;
+        font-size: 12px;
+        font-weight: 20;
+        gap: 0rem;
+    }
+    
+}

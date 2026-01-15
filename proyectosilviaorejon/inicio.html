@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Somos Bandido Burger.">
+
+     <!-- Añado un title para mejorar la accesibilidad y optimizar el SEO -->
+
+    <title>Bandido-inicio</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js" defer></script>
+    <!--  En head añado las tipografías que utilizo en la web -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Varta:wght@300..700&display=swap" rel="stylesheet">
+    
+</head>
+
+<body>
+    <!-- Añado un Header con los elementos principales de la web y el logotipo de la marca -->
+    <header class="Header">
+    
+         <!-- Utilizo H1 para el logotipo-->
+        <h1 class="H1">
+            <a href="inicio.html">
+                <picture>
+                    <source srcset="assets/BANDIDO.png" type="image/png">
+                    <img src="assets/BANDIDO.png" alt="logo-bandido" width="1080" height="1080" loading="lazy">
+                </picture>
+            </a>
+        </h1>
+        <nav class="Header-nav">
+            <ul class="Ul-header">
+                <li class="Li-header"><a href="carta.html" title="Ver carta de hamburguesas">Carta</a></li>
+                <li class="Li-header"><a href="expediente.html" title="Ver nuestro expediente">Expediente</a></li>
+                <li class="Li-header"><a href="confidencial.html" title="Ver apartado confidencial">Confidencial</a></li>
+                <li class="Li-header"><a href="servicios.html" title="Ver nuestros servicios">Servicios</a></li>
+            </ul>
+        </nav>
+         <!-- Utilizo button para optimizar el espacio en Responsive-->
+         <button class="Header-menu" aria-label="icono.menu" title="Abrir menú de navegación">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+              </svg>
+        </button>
+    </header>
+        <!-- Añado el main en la página inicio con el contenido principal de la web -->
+    <main>
+        <video autoplay muted loop playsinline width="1080" preload="none" poster="assets/miniatura.jpg">
+            <source src="assets/bandido-propuesta-audiovisual-2.webm" type="video/webm">
+            <source src="assets/bandido-propuesta-audiovisual-2.mp4" type="video/mp4">
+          </video>
+          
+        <!-- Utilizo section dado que es un contenido que tiene relación el inicio -->
+
+        <section class="Inicio-menu">
+        <!-- Utilizo H2 para dar importancia a los titulos destacados de cada section -->
+
+            <h2 class="H2-inicio">Nuestros Delitos</h2>
+        <!-- Para nombrar las hamburguesas utilizo una lista -->
+
+            <ul class="Ul-inicio">
+                <li class="Li-inicio">
+                    <picture>
+                        <source srcset="assets/la-macarra.jpg" type="image/jpg">
+                        <img src="assets/la-macarra.jpg" title="la-macarra" alt="la-macarra" width="1080" height="1350" loading="lazy">
+                    </picture>
+                </li>
+                <li class="Li-inicio--destacado">
+                    <picture>
+                        <source srcset="assets/la-bandida.jpg" type="image/jpg">
+                        <img src="assets/la-bandida.jpg" title="la-bandida" alt="la-bandida" width="1080" height="1350" loading="lazy">
+                    </picture>
+                </li>
+                <li class="Li-inicio">
+                    <picture>
+                        <source srcset="assets/la-sentencia.jpg" type="image/jpg">
+                        <img src="assets/la-sentencia.jpg" title="la-sentencia" alt="la-sentencia" width="1080" height="1350" loading="lazy">
+                    </picture>
+                </li>   
+            </ul>
+        </section>
+        <!-- Utilizo H2 y section en cada apartado-->
+
+        <section class="Inicio-resenas"> 
+            <h2 class="H2-inicio">DECLARACIONES CONFIDENCIALES</h2>
+            <ul class="Ul-resenas">
+                <li class="Li-resenas">
+                <!-- Utilizo H4 para resaltar texto menos importante-->
+                    <h4 class="H4-resenas">Juan R. 5 ⭐️⭐️⭐️⭐️⭐️ </h4>
+                    <p class="P-resenas"> 
+                        ¡Me encantó el ambiente! La comida es increíble y el toque 'bandido' hace que sea una experiencia única. Las hamburguesas son de otro nivel. ¡Volveré sin duda!</p>
+                </li>
+                <li class="Li-resenas">
+                    <h4 class="H4-resenas">Laura M. 5 ⭐️⭐️⭐️⭐️⭐️ </h4>
+                    <p class="P-resenas">
+                        Un lugar con mucho carácter y buena comida. Las opciones vegetarianas son deliciosas, y la zona pet friendly es genial.</p>
+                </li>
+                <li class="Li-resenas">
+                    <h4 class="H4-resenas">Rodrigo P. 4 ⭐️⭐️⭐️⭐️ </h4>
+                    <p class="P-resenas">Si buscas algo diferente y sabroso, Bandido es el lugar. La hamburguesa LA SENTENCIA es mi favorita. Perfecta para un día con amigos, buen rollo y buena comida</p>
+                </li>
+            </ul>
+
+        </section>
+        <!-- Utilizo H2 y section en cada apartado-->
+
+        <section class="Inicio-confidencial">
+            <h2 class="H2-inicio">EL INTERROGATORIO</h2>
+            <div class="Inicio-fyq"> 
+            
+            <!-- Utilizo la etiqueta P para el texto y H3 para resaltar títulos secundarios -->
+
+                <div class="Inicio-fyq--item">
+                    <h3 class="H3-fyq">¿Hay opciones vegetarianas o sin gluten?</h3>
+                    <p class="P-fyq">¡Por supuesto! En Bandido nos tomamos en serio los gustos y necesidades de cada uno. Para quienes prefieren una opción sin carne, tenemos LA DONATELLA: una hamburguesa vegetariana con personalidad propia.
+                    Y si lo tuyo es evitar el gluten, tu aliada es LA INFILTRADA, pensada para que no renuncies a disfrutar como se merece. 🆓 </p>
+                </div>
+
+                <div class="Inicio-fyq--item">
+                    <h3 class="H3-fyq">¿Se puede venir con perro?</h3>
+                    <p class="P-fyq">¡Claro que sí! En Bandido los perros son parte de la banda. Tenemos zona pet friendly para que tu compi también disfrute del ambiente. Solo pedimos respeto y buen rollo… del perro y del humano 😉🐾</p>
+                </div>
+
+                <div class="Inicio-fyq--item">
+                    <h3 class="H3-fyq">¿Cuál es el horario de apertura?</h3>
+                    <p class="P-fyq">Abrimos todos los días de 12:00h a 00:00h. ¡Ven a disfrutar cuando quieras, que la banda siempre está lista para recibirte! ⏳</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- En el footer fijo los links a redes sociales y los documentos legales para un acceso rápido -->
+
+    <footer class="Footer">
+        <div class="Footer-legal">
+            <ul class="Ul-Legal">
+                <li class="Li-legal"><a href="legal.html" title="Aviso Legal">Aviso Legal</a></li>
+                <li class="Li-legal"><a href="privacidad.html" title="Política de Privacidad">Política de Privacidad</a></li>
+                <li class="Li-legal"><a href="cookies.html" title="Política de Cookies">Política de Cookies</a></li>
+            </ul>
+        </div>
+        <div class="Footer-social">
+            <ul class="Ul-social">
+                <li class="Li-social"><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer nofollow" title="Instagram de Bandido">Instagram</a></li>
+                <li class="Li-social"><a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer nofollow" title="Tiktok de Bandido">Tiktok</a></li>
+                <li class="Li-social"><a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer nofollow" title="Youtube de Bandido">Youtube</a></li>
+                <li class="Li-social"><a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer nofollow" title="Linkedin de Bandido">Linkedin</a></li>
+            </ul>
+        </div>
+    </footer>
+    
+</body>
+
+</html>
